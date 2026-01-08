@@ -1,0 +1,572 @@
+**NCBA BANK NETWORK CONFIGURATIONS**
+!
+HQ-AC-SW0
+!
+enbale secret STP
+hostname HQ-ACCESS-SW0
+
+!
+int FA0/1
+Switchport mode trunk
+Switchport trunk allowed vlan 10,20,30,40,50,60,70,80
+Switchport trunk native vlan 101
+
+!
+Interface Fa0/2
+Switchport mode access 
+Switchport access VLAN 10
+
+!
+Interface Fa0/3
+Switchport mode access 
+Switchport access VLAN 20
+
+!
+Spanning-tree mode rapid-pvst
+Spanning-tree portfast default
+Spanning-tree portfast bpduguard default
+
+!
+Int vlan 10
+Name CUSTOMER-SERVICE
+
+Int VLAN 20
+name ATM
+
+Int VLAN 30 
+name FINANCE
+
+Int VLAN 40
+NAME HR
+
+Int VLAN 50
+name SYSTEM ADMIN
+
+Int VLAN 60
+NAME LOANS
+
+Int VLAN 70
+NAME MARKETING 
+
+Int VLAN 80
+name TELECOM
+
+####################################################################################
+
+HQ-AC-SW2
+
+enable secret STP
+hostname HQ-ACCESS-SW2
+
+!
+Int vlan 10
+Name CUSTOMER-SERVICE
+
+Int VLAN 20
+name ATM
+
+Int VLAN 30 
+name FINANCE
+
+Int VLAN 40
+NAME HR
+
+Int VLAN 50
+name SYSTEM ADMIN
+
+Int VLAN 60
+NAME LOANS
+
+Int VLAN 70
+NAME MARKETING 
+
+Int VLAN 80
+name TELECOM
+
+!
+Interface Fa0/2
+Switchport mode access 
+Switchport access VLAN 30
+
+!
+Interface Fa0/3
+Switchport mode access 
+Switchport access VLAN 40
+
+!
+int FA0/1
+Switchport mode trunk
+Switchport trunk allowed vlan 10,20,30,40,50,60,70,80
+Switchport trunk native vlan 101
+
+!
+int FA0/4
+Switchport mode trunk
+Switchport trunk allowed vlan 10,20,30,40,50,60,70,80
+Switchport trunk native vlan 101
+
+!
+Spanning-tree mode rapid-pvst
+Spanning-tree portfast default
+Spanning-tree portfast bpduguard default
+
+###############################################################################
+
+HQ-AC-SW3
+!
+enable secret STP
+hostname HQ-ACCESS-SW3
+
+!
+Int vlan 10
+Name CUSTOMER-SERVICE
+
+Int VLAN 20
+name ATM
+
+Int VLAN 30 
+name FINANCE
+
+Int VLAN 40
+NAME HR
+
+Int VLAN 50
+name SYSTEM ADMIN
+
+Int VLAN 60
+NAME LOANS
+
+Int VLAN 70
+NAME MARKETING 
+
+Int VLAN 80
+name TELECOM
+
+!
+Interface Fa0/1
+Switchport mode access 
+Switchport access VLAN 50
+
+!
+Interface Fa1/1
+Switchport mode access 
+Switchport access VLAN 60
+
+!
+Interface FA2/1
+Switchport mode trunk
+Switchport trunk allowed vlan 10,20,30,40,50,60,70,80
+Switchport trunk native vlan 101
+
+!
+Interface FA3/1
+Switchport mode trunk
+Switchport trunk allowed vlan 10,20,30,40,50,60,70,80
+Switchport trunk native vlan 101
+
+!
+Spanning-tree mode rapid-pvst
+Spanning-tree portfast default
+Spanning-tree portfast bpduguard default
+
+###########################################################################
+
+HA-AC-SW1
+!
+enable secret STP
+hostname HQ-ACCESS-SW1
+
+!
+Int vlan 10
+Name CUSTOMER-SERVICE
+
+Int VLAN 20
+name ATM
+
+Int VLAN 30 
+name FINANCE
+
+Int VLAN 40
+NAME HR
+
+Int VLAN 50
+name SYSTEM ADMIN
+
+Int VLAN 60
+NAME LOANS
+
+Int VLAN 70
+NAME MARKETING 
+
+Int VLAN 80
+name TELECOM
+
+!
+Interface Fa0/2
+Switchport mode access 
+Switchport access VLAN 70
+
+!
+Interface Fa0/3
+Switchport mode access 
+Switchport access VLAN 80
+
+!
+Interface FA0/1
+Switchport mode trunk
+Switchport trunk allowed vlan 10,20,30,40,50,60,70,80
+Switchport trunk native vlan 101
+
+!
+Spanning-tree mode rapid-pvst
+Spanning-tree portfast default
+Spanning-tree portfast bpduguard default
+
+##############################################################################
+
+HQ-DIST-SW4
+!
+enable secret STP
+hostname HQ-DISTRIBUTION-SW4
+
+!
+Int vlan 10
+Name CUSTOMER-SERVICE
+
+Int VLAN 20
+name ATM
+
+Int VLAN 30 
+name FINANCE
+
+Int VLAN 40
+NAME HR
+
+Int VLAN 50
+name SYSTEM ADMIN
+
+Int VLAN 60
+NAME LOANS
+
+Int VLAN 70
+NAME MARKETING 
+
+Int VLAN 80
+name TELECOM
+
+!
+Interface range FA0/1 - 3
+Switchport trunk encapsulation dot1q
+Switchport mode trunk
+Switchport trunk allowed vlan 10,20,30,40,50,60,70,80
+Switchport trunk native vlan 101
+
+!
+Interface range FA0/4 - 5
+Switchport trunk encapsulation dot1q
+Switchport mode trunk
+Switchport trunk allowed vlan 10,20,30,40,50,60,70,80
+Switchport trunk native vlan 101
+
+!
+Ip routing
+
+!
+Int VLAN 10
+Ip address 10.10.20.2  255.0.0.0
+Standby 10 ip 10.10.20.1
+Standby 10 priority 150
+Standby 10 preempt
+No shut
+
+!
+Int VLAN 20
+Ip address 172.20.25.2  255.255.0.0
+Standby 10 ip 172.20.25.1
+Standby 10 priority 150
+Standby 10 preempt
+No shut
+
+!
+Int VLAN 30
+Ip address 192.168.1.3  255.255.255.0
+Standby 10 ip 192.168.1.1
+Standby 10 priority 150
+Standby 10 preempt
+No shut
+
+!
+Int VLAN 40
+Ip address 30.121.0.5  255.0.0.0
+Standby 10 ip 30.121.0.1
+Standby 10 priority 150
+Standby 10 preempt
+No shut
+
+!
+Int VLAN 50
+Ip address 146.20.10.5 255.255.0.0
+Standby 10 ip 146.20.10.1
+Standby 10 priority 150
+Standby 10 preempt
+No shut
+
+!
+Int VLAN 60
+Ip address 92.168.114.5  255.0.0.0
+Standby 10 ip 92.168.114.1
+Standby 10 priority 150
+Standby 10 preempt
+No shut
+
+!
+Int VLAN 70
+Ip address 110.43.1.3   255.0.0.0
+Standby 10 ip 110.43.1.3 
+Standby 10 priority 150
+Standby 10 preempt
+No shut
+
+!
+Int VLAN 80
+Ip address 102.16.111.10  255.0.0.0
+Standby 10 ip 102.16.111.1
+Standby 10 priority 150
+Standby 10 preempt
+No shut
+
+!
+Spanning-tree mode rapid-pvst
+Spanning-tree VLAN 10 root primary
+Spanning-tree VLAN 20 root primary
+Spanning-tree VLAN 30 root primary
+Spanning-tree VLAN 40 root primary
+Spanning-tree VLAN 50 root secondary
+Spanning-tree VLAN 60 root secondary
+Spanning-tree VLAN 70 root secondary
+Spanning-tree VLAN 80 root secondary
+
+#############################################################################
+
+HQ-CORE-SW9
+! 
+enable secret STP
+hostname HQ-CORE-SW9
+
+!
+Int vlan 10
+Name CUSTOMER-SERVICE
+
+Int VLAN 20
+name ATM
+
+Int VLAN 30 
+name FINANCE
+
+Int VLAN 40
+NAME HR
+
+Int VLAN 50
+name SYSTEM ADMIN
+
+Int VLAN 60
+NAME LOANS
+
+Int VLAN 70
+NAME MARKETING 
+
+Int VLAN 80
+name TELECOM
+
+!
+Interface range FA0/1 - 5
+Switchport trunk encapsulation dot1q
+Switchport mode trunk
+Switchport trunk allowed vlan 10,20,30,40,50,60,70,80
+Switchport trunk native vlan 101
+
+!
+Ip routing
+
+!
+Int VLAN 10
+Ip address 10.10.20.6  255.0.0.0
+Standby 10 ip 10.10.20.1
+Standby 10 priority 100
+Standby 10 preempt
+No shut
+
+Int VLAN 20
+Ip address 172.20.25.5  255.255.0.0
+Standby 10 ip 172.20.25.1
+Standby 10 priority 100
+Standby 10 preempt
+No shut
+
+Int VLAN 30
+Ip address 192.168.1.5  255.255.255.0
+Standby 10 ip 192.168.1.1
+Standby 10 priority 100
+Standby 10 preempt
+No shut
+
+!
+Int VLAN 40
+Ip address 30.121.0.3  255.0.0.0
+Standby 10 ip 30.121.0.1
+Standby 10 priority 100
+Standby 10 preempt
+No shut
+
+!
+Int VLAN 50
+Ip address 146.20.10.11  255.255.0.0
+Standby 10 ip 146.20.10.1
+Standby 10 priority 100
+Standby 10 preempt
+No shut
+
+!
+Int VLAN 60
+Ip address 92.168.114.5  255.0.0.0
+Standby 10 ip 92.168.114.1
+Standby 10 priority 150
+Standby 10 preempt
+No shut
+
+!
+Int VLAN 70
+Ip address 110.43.1.3  255.0.0.0
+Standby 10 ip 110.43.1.1
+Standby 10 priority 150
+Standby 10 preempt
+No shut
+
+!
+Int VLAN 80
+Ip address 102.16.111.3  255.0.0.0
+Standby 10 ip 102.16.111.1
+Standby 10 priority 110
+Standby 10 preempt
+No shut
+
+!
+Spanning-tree mode rapid-pvst
+Spanning-tree VLAN 50 root primary
+Spanning-tree VLAN 60 root primary
+Spanning-tree VLAN 70 root primary
+Spanning-tree VLAN 80 root primary
+Spanning-tree VLAN 10 root secondary
+Spanning-tree VLAN 20 root secondary
+Spanning-tree VLAN 30 root secondary
+Spanning-tree VLAN 40 root secondary
+
+#################################################################################
+
+CORE R5
+!
+enable secret STP
+hostname HQ-CORE-R5
+
+!
+Interface Go/1
+Ip address 50.10.5.7   255.0.0.0
+Speed 100
+Duplex half
+no shut
+
+!
+Int G0/2
+Ip address 121.11.52.12  255.0.0.0
+no shut
+
+!
+Int G0/0
+Ip address 40.10.127.12  255.0.0.0
+No shut
+
+!
+Interface Loopback 0
+Ip address  5.5.5.5  255.255.255.255
+
+!
+router OSPF 100
+Network 221.9.14.0 0.0.0.255 area 0
+Network 40.0.0.0  0.255.255.255 area 0
+Network 121.0.0.0  0.255.255.255 area 0
+Passive-Interface Loopback
+Passive-Interface G0/1
+
+#########################################################################
+
+CORE R6
+!
+enable secret STP
+hostname HQ-CORE-R6
+
+!
+Interface Loopback0
+Ip address 6.6.6.6 255.255.255.255
+
+!
+interface GigabitEthernet0/0
+ ip address 221.9.14.10 255.255.255.0
+ no shut
+
+!
+Interface GigabitEthernet0/1
+ ip address 10.21.6.12 255.0.0.0
+ duplex half
+ speed 100
+No shut 
+!
+interface GigabitEthernet0/2
+ ip address 121.11.52.7 255.0.0.0
+no shut
+
+!
+router OSPF 100
+Network 221.9.14.0 0.0.0.255 area 0
+Network 40.0.0.0  0.255.255.255 area 0
+Network 121.0.0.0  0.255.255.255 area 0
+Passive-Interface Loopback
+Passive-Interface G0/1
+
+#############################################################################
+
+EDGE ROUTER 
+!
+enable secret STP
+hostname ISO-EDGE-RTR3
+
+!
+interface FastEthernet0/0
+ ip address 149.141.9.0 255.255.0.0
+ no shut
+
+!
+interface FastEthernet0/1
+ ip address 40.10.127.11 255.0.0.0
+no shut
+
+!
+interface FastEthernet0/1/0
+ switchport access vlan 10
+ switchport mode access
+Ip address 221.9.14.76  255.255.255.0
+no shut
+
+!
+interface Loopback0
+ ip address 3.3.3.3 255.255.255.255
+
+ !
+ router ospf 10
+ network 221.9.14.0 0.0.0.255 area 0
+ network 40.0.0.0 0.255.255.255 area 0
+ Passive-Int Loopback 0
+
+!
+ip route 0.0.0.0 0.0.0.0 149.141.0.0 
+
+#############################################################################
