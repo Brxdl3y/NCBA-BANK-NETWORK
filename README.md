@@ -40,9 +40,9 @@ The topology follows a classic enterprise hierarchy, not because it’s textbook
 
 The core is clean and disciplined.
 
-Dynamic routing with OSPF
+Dynamic routing with **OSPF**
 
-Loopback interfaces for stable identities
+**Loopback interfaces** for stable identities
 
 MD5 authentication to establish routing trust
 
