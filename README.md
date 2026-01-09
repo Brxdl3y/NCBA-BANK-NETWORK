@@ -4,7 +4,7 @@ I built this lab the way I believe networks should be built in real life: with r
 
 Not the loud kind of complexity, the kind of complexity that disappears when everything is working — and only shows itself when something breaks.
 
-This is a simulated NCBA Bank campus network, but the thinking behind it is real-world, production‑minded, and shaped by how enterprise networks behave under pressure.
+This is a simulated **NCBA Bank** campus network, but the thinking behind it is real-world, production‑minded, and shaped by how enterprise networks behave under pressure.
 
 **Why This Network Exists**
 
@@ -25,7 +25,7 @@ This lab reflects how I think:
 
 -Predictable paths beat clever tricks
 
--Redundancy only matters if it’s intentional
+-**Redundancy** only matters if it’s intentional
 
 -Security should feel boring — because it’s always there
 
