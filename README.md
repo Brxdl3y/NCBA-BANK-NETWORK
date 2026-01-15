@@ -36,7 +36,7 @@ This lab reflects how I think:
 
 The topology follows a classic enterprise hierarchy, not because it’s textbook, but because it works.
 
-**Core Layer** 
+📌**Core Layer** 
 
 The core is clean and disciplined.
 
@@ -49,7 +49,7 @@ MD5 authentication to establish routing trust
 Nothing extra. Nothing fragile. Just fast, resilient forwarding.
 
 
-**Distribution Layer**
+📌**Distribution Layer**
 
 This is where intelligence lives.
 
