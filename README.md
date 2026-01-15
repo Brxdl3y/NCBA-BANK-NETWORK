@@ -2,18 +2,18 @@
 
 I built this lab the way I believe networks should be built in real life: with restraint, intention, and a quiet respect for failure.
 
-Not the loud kind of complexity, the kind of complexity that disappears when everything is working — and only shows itself when something breaks.
+Not the loud kind of complexity, the kind of complexity that disappears when everything is working and only shows itself when something breaks.
 
 This is a simulated **NCBA Bank** campus network, but the thinking behind it is real-world, production‑minded, and shaped by how enterprise networks behave under pressure.
 
-**Why This Network Exists**
+📌**Why This Network Exists**
 
-In banking environments, the network is never the product — it’s the foundation. If it fails, everything above it collapses.
+In banking environments, the network is never the product it’s the foundation. If it fails, everything above it collapses.
 
 That mindset shaped every decision here.
 
 
-**The Mental Model**
+📌**The Mental Model**
 
 I don’t see networking as commands on a screen. I see it as controlled chaos.
 
