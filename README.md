@@ -1,10 +1,10 @@
 **NCBA Bank — Enterprise Network** 
 
-I built this lab the way I believe networks should be built in real life: with restraint, intention, and a quiet respect for failure.
+🔹I built this lab the way I believe networks should be built in real life: with restraint, intention, and a quiet respect for failure.
 
 Not the loud kind of complexity, the kind of complexity that disappears when everything is working and only shows itself when something breaks.
 
-This is a simulated **NCBA Bank** campus network, but the thinking behind it is real-world, production‑minded, and shaped by how enterprise networks behave under pressure.
+🔹This is a simulated **NCBA Bank** campus network, but the thinking behind it is real-world, production‑minded, and shaped by how enterprise networks behave under pressure.
 
 📌**Why This Network Exists**
 
@@ -79,19 +79,19 @@ End devices connect. They do not influence the topology. Ever.
 
 Departments are separated not for practice, but for realism:
 
-Customer Service
+🔹Customer Service
 
-Finance & Fraud
+🔹Finance & Fraud
 
-Human Resources
+🔹Human Resources
 
-System Administration
+🔹System Administration
 
-Loans & Savings
+🔹Loans & Savings
 
-Digital Marketing
+🔹Digital Marketing
 
-Telecommunications
+🔹Telecommunications
 
 This structure reduces broadcast noise, limits failure domains, and mirrors how financial institutions think about internal boundaries.
 
