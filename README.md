@@ -51,7 +51,7 @@ Nothing extra. Nothing fragile. Just fast, resilient forwarding.
 
 📌**Distribution Layer**
 
-This is where intelligence lives.
+This is where intelligence lives:
 
 Layer 3 switches performing inter‑VLAN routing via SVIs
 
@@ -112,7 +112,7 @@ High Availability That Isn’t Cosmetic
 
 HSRP isn’t just turned on. It’s thought through.
 
-Every VLAN has a resilient default gateway. Roles are defined. Preemption is controlled. Failure scenarios were considered before the first command was typed.
+🔹Every VLAN has a resilient default gateway. Roles are defined. Preemption is controlled. Failure scenarios were considered before the first command was typed.
 
 Redundancy here isn’t for show — it’s for continuity.
 
@@ -123,13 +123,13 @@ Even in a lab, I refuse to normalize insecurity.
 
 This network includes:
 
-Encrypted routing authentication
+VEncrypted routing authentication
 
-Password encryption and device hardening
+VPassword encryption and device hardening
 
-SSH‑only remote access
+VSSH‑only remote access
 
-Storm‑control and edge protections
+VStorm‑control and edge protections
 
 None of this is exotic. That’s the point.
 
