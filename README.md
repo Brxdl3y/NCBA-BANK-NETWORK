@@ -158,7 +158,9 @@ I’m pursuing networking because I enjoy building things that don’t demand at
 Quietly resilient. Intentionally designed. Ready to grow.
 
 
-Bradley Giovanni   |  Network Engineer   | Network Administrator    |  NOC Engineer
+Author - Bradley Giovanni   
+
+|  Network Engineer   | Network Administrator    |  NOC Engineer
 
 
 GMAIL - giovanniibradley@gmail.com
